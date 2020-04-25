@@ -1,0 +1,28 @@
+<?php
+
+//host, user, password, grafik
+// '127.0.0.1', root, '', grafik
+$link = mysqli_connect('localhost', 'root','', 'grafik');
+
+//menguji error
+if( !$link ){
+	die('ada error'. mysqli_connect_error());
+}
+
+//membuat database
+//$query = "CREATE DATABASE grafik";
+
+$query = "SELECT * FROM donasi";
+$hasil = mysqli_query($link, $query);
+
+if ( mysqli_num_rows($hasil) > 0 ){ 
+	
+	while( $data = mysqli_fetch_assoc($hasil) ){
+		echo $data['jumlah']. " ". $data['no_rek'] . "<br>";
+	}
+}
+
+//menutup koneksi
+mysqli_close($link);
+
+?>

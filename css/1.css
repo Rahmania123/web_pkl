@@ -1,0 +1,10 @@
+.tombol_login{  
+	background: #800080;
+	color: white;
+	font-size: 11pt;
+	width: 350px;
+	height: 60px;
+	border: none;
+	border-radius: 7px;
+	padding: 10px 20px;
+}
