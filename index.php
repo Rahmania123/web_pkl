@@ -10,17 +10,6 @@ $link = mysqli_connect('localhost', 'root','', 'grafik');
 if( !$link ){
 	die('ada error'. mysqli_connect_error());
 }
-
-$query = "INSERT INTO donasi (nama, jumlah, tanggal, bank, no_rek)
-			VALUES ('Gea', 100, 07-04-2020, 'BNI', 98347645164890); ";
-			
-$query .= "INSERT INTO donasi (nama, jumlah, tanggal, bank, no_rek)
-			VALUES ('Danang', 500, 01-01-2020, 'BTN', 38495063775489) ";
-			
-if(mysqli_multi_query($link, $query) ){
-	echo 'berhasil';
-}
-
 //membuat database
 //$query = "CREATE DATABASE grafik";
 
@@ -30,7 +19,6 @@ $hasil = mysqli_query($link, $query);
 if ( mysqli_num_rows($hasil) > 0 ){ 
 	
 	while( $data = mysqli_fetch_assoc($hasil) ){
-		echo $data['nama'].$data['jumlah'].$data['tanggal'].$data['bank'].$data['no_rek']."<br>";
 	}
 }
 
